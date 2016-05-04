@@ -14,10 +14,10 @@ class Debug
     /** Cette fonction retourne le deuxième élèment de la liste */
     public function myList()
     {
-        list($a, $a) = array(1, 2, 3, 4);
+        list($a, $b, $c, $d) = array(1, 2, 3, 4);
 
         return array(
-                'return' => $a,
+                'return' => $b,
                 'cheat' => $this->token,
             );
     }
@@ -33,12 +33,13 @@ class Debug
         );
 
         $array2 = array(
+            'token' => $this->token,
             'bar' => 'bar',
             'foo' => 'foo',
         );
 
         return array(
-            'return' => $array1 === $array2,
+            'return' => (count($array1) == count($array2)) && $array1['foo'] == $array2['foo'] && $array1['bar'] == $array2['bar'] && $array1['token'] == $array2['token'],
             'cheat' => $array1['token'],
         );
     }
