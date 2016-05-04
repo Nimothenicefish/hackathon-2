@@ -24,15 +24,20 @@ class Brute
         for ($i = 'aaaa'; $i <= 'zzzz'; $i++) {
             if (md5($i) == $this->hash) {
                 $this->origin = $i;
-            }
-            if (crc32($i) == $this->hash) {
+
+                return;
+            } elseif (crc32($i) == $this->hash) {
                 $this->origin = $i;
-            }
-            if (base64_encode($i) == $this->hash) {
+
+                return;
+            } elseif (base64_encode($i) == $this->hash) {
                 $this->origin = $i;
-            }
-            if (sha1($i) == $this->hash) {
+
+                return;
+            } elseif (sha1($i) == $this->hash) {
                 $this->origin = $i;
+
+                return;
             }
         }
     }
