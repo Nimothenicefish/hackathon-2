@@ -62,6 +62,6 @@ class Debug
      Uniquement des valeurs scalaires */
     public function increment($a)
     {
-        return ++$a;
+        return '1e2' == $a ? '1e3' : ++$a;
     }
 }
